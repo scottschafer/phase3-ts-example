@@ -1,10 +1,11 @@
+import { ObjectParams } from '../types';
+
 export default class Dude extends Phaser.Physics.Arcade.Sprite {
   private currentScene: Phaser.Scene;
-  private player: Phaser.Physics.Arcade.Image;
-  private cursors;
+  private cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
-  constructor(params) {
-    super(params.scene, params.x, params.y, params.key, params.frame);
+  constructor(params: ObjectParams) {
+    super(params.scene, params.x, params.y, params.texture, params.frame);
 
     this.currentScene = params.scene;
     this.initSprite();
@@ -19,7 +20,6 @@ export default class Dude extends Phaser.Physics.Arcade.Sprite {
   private initSprite() {
     this.currentScene.physics.world.enable(this);
     this.setBounce(0.2);
-    this.setCollideWorldBounds(true);
     this.setGravityY(300);
   }
 

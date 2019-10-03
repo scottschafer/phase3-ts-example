@@ -12,7 +12,10 @@ const config = {
     arcade: {
       gravity: { y: 300 },
       debug: false
-    }
+    },
+  },
+  scale: {
+    autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   scene: [GameScene]
 };
